@@ -1,7 +1,7 @@
 {
   "idf.currentSetup": "/home/martin/.espressif/v6.0.1/esp-idf",
   "idf.flashType": "UART",
-  "idf.port": "/dev/tty.usbserial-5A780226121",
+  "idf.port": "/dev/ttyACM0",
   "idf.customExtraVars": {},
   "clangd.path": "/Users/martin/.espressif/tools/esp-clang/esp-19.1.2_20250312/esp-clang/bin/clangd",
   "clangd.arguments": [
