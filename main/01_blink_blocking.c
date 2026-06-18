@@ -22,9 +22,22 @@ esp_err_t blink_blocking(gpio_num_t gpioNum, int millisecons);
  */
 esp_err_t init_leds(void)
 {  
-  // LED_BOARD
-  gpio_reset_pin(LED_BOARD);
-  gpio_set_direction(LED_BOARD, GPIO_MODE_OUTPUT);
+  // 1. Forma simple de configurar I/O
+  // gpio_reset_pin(LED_BOARD);
+  // gpio_set_direction(LED_BOARD, GPIO_MODE_OUTPUT);
+
+
+  // 2 .Forma completa con toda la struct
+  gpio_config_t io_conf = {
+    .pin_bit_mask = (1ULL << LED_BOARD),   // Select GPIO 2
+    .mode = GPIO_MODE_OUTPUT,              // Set as output
+    .pull_up_en = GPIO_PULLUP_DISABLE,     // Disable pull-up
+    .pull_down_en = GPIO_PULLDOWN_DISABLE, // Disable pull-down
+    .intr_type = GPIO_INTR_DISABLE         // Disable interrupts
+  };
+  gpio_config(&io_conf);
+
+
 
   return ESP_OK;
 }
