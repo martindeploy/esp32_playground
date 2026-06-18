@@ -89,7 +89,13 @@ esp_err_t initIrs(void) {
   return ESP_OK;
 }
 
+/**
+ * Callback de la interrupcion. No puede llevar nada bloqueante. La llama la interrupcion.
+ * como por ejemplo un ESP_LOG
+ */
 void isrHandler(void *args) {
+
+  // TODO: Investigar que se puede recuperar de *args.
   
   count ++;
   if(count > 2){
