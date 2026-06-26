@@ -10,7 +10,7 @@
 #define LED_RED     27
 #define LED_GREEN   33
 
-// Configuracion SPI 2 - MAX7219 Matrix
+// Configuracion SPI 2 - MAX7219 Matrix LED
 #define MAX7219_MOSI_GPIO 13 // DIN
 #define MAX7219_MISO_GPIO 12 // not used
 #define MAX7219_SCLK      14
