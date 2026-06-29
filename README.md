@@ -5,6 +5,15 @@
 - 03_spi_matrix.c: Prueba de matriz LED 8x8 con MAX7219. Ver datasheets en docs. [Ver video](https://www.youtube.com/watch?v=OiKF7yPsxXM&t=11s)
 - 04_interrupts.c: Interrupciones por hardware utilizando un push button, resistencia pull up y capacitor de 33pF.
 - 05_ble_connect.c: Servidor Gatt por BLE. [Ver video](https://www.youtube.com/watch?v=EIo5aZ3c89Q)
+- 06_lcd_gpio.c: Conexión de pantalla LCD 4 líneas con ST7920 por GPIO (sin config SPI)
+- 07_matrix_keyboard_gpio.c: Lectura de teclado matricial 4x4 tradicional utilizando GPIO, sin bibliotecas.
+- 08_matrix_keyboard_library.c: Lectura de teclado matricial 4x4 ejemplo ESP-IDF solo válido para ESP32-S3.
+- 09_matrix_keyboard_debounce.c: Lectura de teclado matricial 4x4 con debouncing.
+- 10_ble_beacon.c:
+- 11_ble_beacon.c:
+- 12_ble_beacon.c:
+
+
 
 > Importante: Para que funcione BLE y compile correctamente debe estar habilitado desde sdkconfig los siguientes parametros:
 
