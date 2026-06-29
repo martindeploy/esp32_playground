@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "esp_log.h"
 #include "driver/gpio.h"
-#include "driver/spi_master.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
@@ -232,7 +231,7 @@ void app_main(void) {
     st7920_print("Sin u8g2 :)");
     
     st7920_set_cursor(3, 0);
-    st7920_print("By Cloude");
+    st7920_print("By martindeploy");
     
     ESP_LOGI(TAG, "Texto mostrado. Parpadeo cada 2 segundos...");
     

@@ -1,31 +1,36 @@
 # Delays bloqueantes similar Arduino
-# idf_component_register(SRCS "01_blink_blocking.c" INCLUDE_DIRS ".")
+# idf_component_register(SRCS "./01_blink_blocking/main.c" INCLUDE_DIRS "./01_blink_blocking")
 
 # Delays con timer
-# idf_component_register(SRCS "02_blink_timers.c" INCLUDE_DIRS ".")
+# idf_component_register(SRCS "./02_blink_timers/main.c" INCLUDE_DIRS "./02_blink_timers")
 
 # SPI Matrix LED
-# idf_component_register(SRCS "03_spi_matrix.c" INCLUDE_DIRS ".")
+# idf_component_register(SRCS "./03_spi_matrix/main.c" 
+#                        INCLUDE_DIRS "./03_spi_matrix"
+#                        PRIV_REQUIRES esp_driver_spi esp_driver_gpio)
 
 # Interrupciones y pulsadores
-# idf_component_register(SRCS "04_interrupts.c" INCLUDE_DIRS ".")
+# idf_component_register(SRCS "./04_interrupts/main.c" INCLUDE_DIRS "./04_interrupts")
 
-# Bluetooth BLE
-# idf_component_register(SRCS "05_ble_connect.c" INCLUDE_DIRS ".")
+# Bluetooth BLE - Revisar que no funciona
+# idf_component_register(SRCS "./05_ble_innovate_yourself/main.c" 
+#                        INCLUDE_DIRS "./05_ble_innovate_yourself"
+#                        PRIV_REQUIRES esp_event bt nvs_flash)
 
 # Control LCD por GPIO (sin config SPI)
-# idf_component_register(SRCS "06_lcd_gpio.c" INCLUDE_DIRS ".")
+# idf_component_register(SRCS "./06_lcd_gpio/main.c" INCLUDE_DIRS "./06_lcd_gpio")
 
 # Lectura de teclado matricial 4x4 utilizando GPIO y bucles for
-# idf_component_register(SRCS "07_matrix_keyboard_gpio.c" INCLUDE_DIRS ".")
+# idf_component_register(SRCS "./07_matrix_keyboard_gpio/main.c" INCLUDE_DIRS "./07_matrix_keyboard_gpio")
 
 # Lectura de teclado matricial 4x4 utilizando biblioteca matrix_keyboard (requiere dedic_gpio - NO compatible con ESP32 original)
-# idf_component_register(SRCS "08_matrix_keyboard_library.c"
+# idf_component_register(SRCS "./08_matrix_keyboard_idf_sample/main.c"
 #                        PRIV_REQUIRES matrix_keyboard
-#                        INCLUDE_DIRS "")
+#                        INCLUDE_DIRS "./08_matrix_keyboard_idf_sample")
 
 # Lectura de teclado matricial 4x4 con anti-rebote por software (compatible ESP32) by Cloude Sonnet 4.5
-# idf_component_register(SRCS "09_matrix_keyboard_debounce.c" INCLUDE_DIRS ".")
+idf_component_register(SRCS "./09_matrix_keyboard_debounce/main.c" 
+                       INCLUDE_DIRS "./09_matrix_keyboard_debounce")
 
 # 10 - BLE Beacon ejemplo. Solo advertising, sin posibilidad de conectarse
 # file(GLOB_RECURSE srcs "./10_ble_beacon/main.c" "./10_ble_beacon/src/*.c")
@@ -58,14 +63,14 @@
 
 
 # 13 BLE como teclado, mouse o multimedia
-set(srcs "./13_ble_hid/esp_hid_device_main.c"
-         "./13_ble_hid/esp_hid_gap.c")
-set(include_dirs "./13_ble_hid")
+# set(srcs "./13_ble_hid/esp_hid_device_main.c"
+#          "./13_ble_hid/esp_hid_gap.c")
+# set(include_dirs "./13_ble_hid")
 
-idf_component_register(SRCS "${srcs}"
-                       INCLUDE_DIRS "${include_dirs}"
-                       REQUIRES esp_hid
-                       PRIV_REQUIRES nvs_flash)#
+# idf_component_register(SRCS "${srcs}"
+#                        INCLUDE_DIRS "${include_dirs}"
+#                        REQUIRES esp_hid
+#                        PRIV_REQUIRES nvs_flash)#
 # CONFIG_BT_ENABLED=y
 # CONFIG_BT_NIMBLE_ENABLED=y
 # CONFIG_BT_CONTROLLER_ENABLED=y

@@ -17,6 +17,9 @@ char *TAG = "BLE-Server";
 uint8_t ble_addr_type;
 void ble_app_advertise(void);
 
+//https://innovationyourself.com/esp32-bluetooth-low-energy-tutorial/
+//TODO: Revisar porque se reinicia
+
 // Write data to ESP32 defined as server
 static int device_write(uint16_t conn_handle, uint16_t attr_handle, struct ble_gatt_access_ctxt *ctxt, void *arg)
 {
