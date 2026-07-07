@@ -12,6 +12,7 @@
 - 10_ble_beacon.c:
 - 11_ble_beacon.c:
 - 12_ble_beacon.c:
+- 14_lcd_i2c: Control de LCD 16x2 en modo texto, ejemplo inicial de (https://controllerstech.com/i2c-in-esp32-esp-idf-lcd-1602) utilizando SPI con ESP32C3 super mini.
 
 
 

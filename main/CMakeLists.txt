@@ -29,8 +29,8 @@
 #                        INCLUDE_DIRS "./08_matrix_keyboard_idf_sample")
 
 # Lectura de teclado matricial 4x4 con anti-rebote por software (compatible ESP32) by Cloude Sonnet 4.5
-idf_component_register(SRCS "./09_matrix_keyboard_debounce/main.c" 
-                       INCLUDE_DIRS "./09_matrix_keyboard_debounce")
+# idf_component_register(SRCS "./09_matrix_keyboard_debounce/main.c" 
+#                        INCLUDE_DIRS "./09_matrix_keyboard_debounce")
 
 # 10 - BLE Beacon ejemplo. Solo advertising, sin posibilidad de conectarse
 # file(GLOB_RECURSE srcs "./10_ble_beacon/main.c" "./10_ble_beacon/src/*.c")
@@ -74,6 +74,13 @@ idf_component_register(SRCS "./09_matrix_keyboard_debounce/main.c"
 # CONFIG_BT_ENABLED=y
 # CONFIG_BT_NIMBLE_ENABLED=y
 # CONFIG_BT_CONTROLLER_ENABLED=y
+
+# 14 Conexion LCD 15x2 modo texto
+idf_component_register( SRCS "./14_lcd_i2c/main.c" 
+                        INCLUDE_DIRS "."
+                        REQUIRES driver)
+
+
 
 
 
