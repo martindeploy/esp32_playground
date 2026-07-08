@@ -81,8 +81,12 @@
 #                         INCLUDE_DIRS "./14_lcd_i2c")
 
 # 15 Lectura de Joystick HW-504
-idf_component_register( SRCS "./15_joystick/main.c"
-                        INCLUDE_DIRS "./15_joystick")
+# idf_component_register( SRCS "./15_joystick/main.c"
+#                         INCLUDE_DIRS "./15_joystick")
+
+# 16 Control de buzzer pasivo HW-508
+idf_component_register( SRCS "./16_buzzer/main.c"
+                        INCLUDE_DIRS "./16_buzzer")
 
 
 
