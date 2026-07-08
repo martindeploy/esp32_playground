@@ -1,6 +1,6 @@
+#include "driver/i2c_master.h"
 
-
-void lcd_init (void);   // initialize lcd
+void lcd_init (i2c_master_dev_handle_t dev_handle);   // initialize lcd
 
 void lcd_send_cmd (char cmd);  // send command to the lcd
 

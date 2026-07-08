@@ -6,40 +6,38 @@
 #include "driver/i2c_master.h"
 #include "unistd.h"
 
-#define SLAVE_ADDRESS_LCD 0x4E>>1 // change this according to ur setup
-
-esp_err_t err;
-
-#define I2C_NUM I2C_NUM_0
-
 static const char *TAG = "LCD";
+
+static i2c_master_dev_handle_t lcd_dev_handle;
 
 void lcd_send_cmd (char cmd)
 {
-  char data_u, data_l;
+  uint8_t data_u, data_l;
 	uint8_t data_t[4];
+	esp_err_t err;
 	data_u = (cmd&0xf0);
 	data_l = ((cmd<<4)&0xf0);
 	data_t[0] = data_u|0x0C;  //en=1, rs=0
 	data_t[1] = data_u|0x08;  //en=0, rs=0
 	data_t[2] = data_l|0x0C;  //en=1, rs=0
 	data_t[3] = data_l|0x08;  //en=0, rs=0
-	err = i2c_master_write_to_device(I2C_NUM, SLAVE_ADDRESS_LCD, data_t, 4, 1000);
-	if (err!=0) ESP_LOGI(TAG, "Error in sending command");
+	err = i2c_master_transmit(lcd_dev_handle, data_t, 4, 1000);
+	if (err != ESP_OK) ESP_LOGI(TAG, "Error in sending command");
 }
 
 void lcd_send_data (char data)
 {
-	char data_u, data_l;
+	uint8_t data_u, data_l;
 	uint8_t data_t[4];
+	esp_err_t err;
 	data_u = (data&0xf0);
 	data_l = ((data<<4)&0xf0);
 	data_t[0] = data_u|0x0D;  //en=1, rs=0
 	data_t[1] = data_u|0x09;  //en=0, rs=0
 	data_t[2] = data_l|0x0D;  //en=1, rs=0
 	data_t[3] = data_l|0x09;  //en=0, rs=0
-	err = i2c_master_write_to_device(I2C_NUM, SLAVE_ADDRESS_LCD, data_t, 4, 1000);
-	if (err!=0) ESP_LOGI(TAG, "Error in sending data");
+	err = i2c_master_transmit(lcd_dev_handle, data_t, 4, 1000);
+	if (err != ESP_OK) ESP_LOGI(TAG, "Error in sending data");
 }
 
 void lcd_clear (void)
@@ -64,9 +62,10 @@ void lcd_put_cur(int row, int col)
 }
 
 
-void lcd_init (void)
+void lcd_init (i2c_master_dev_handle_t dev_handle)
 {
-	// 4 bit initialisation
+	lcd_dev_handle = dev_handle;
+	// 4 bit init
 	usleep(50000);  // wait for >40ms
 	lcd_send_cmd (0x30);
 	usleep(5000);  // wait for >4.1ms
@@ -77,7 +76,7 @@ void lcd_init (void)
 	lcd_send_cmd (0x20);  // 4bit mode
 	usleep(10000);
 
-  // dislay initialisation
+  // dislay init
 	lcd_send_cmd (0x28); // Function set --> DL=0 (4 bit mode), N = 1 (2 line display) F = 0 (5x8 characters)
 	usleep(1000);
 	lcd_send_cmd (0x08); //Display on/off control --> D=0,C=0, B=0  ---> display off

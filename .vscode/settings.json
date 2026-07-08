@@ -3,7 +3,7 @@
   "idf.flashType": "UART",
   "idf.port": "/dev/ttyACM0",
   "idf.customExtraVars": {
-    "IDF_TARGET": "esp32"
+    "IDF_TARGET": "esp32c3"
   },
   "clangd.path": "/home/martin/.espressif/tools/esp-clang/esp-20.1.1_20250829/esp-clang/bin/clangd",
   "clangd.arguments": [
@@ -12,6 +12,6 @@
     "--compile-commands-dir=/home/martin/proyectos/esp32_playground/build"
   ],
   "idf.openOcdConfigs": [
-    "board/esp32-wrover-kit-3.3v.cfg"
+    "board/esp32c3-builtin.cfg"
   ]
 }
