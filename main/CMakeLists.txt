@@ -76,10 +76,13 @@
 # CONFIG_BT_CONTROLLER_ENABLED=y
 
 # 14 Conexion LCD 15x2 modo texto
-idf_component_register( SRCS "./14_lcd_i2c/main.c"
-                             "./14_lcd_i2c/i2c-lcd.c"
-                        INCLUDE_DIRS "./14_lcd_i2c")
+# idf_component_register( SRCS "./14_lcd_i2c/main.c"
+#                              "./14_lcd_i2c/i2c-lcd.c"
+#                         INCLUDE_DIRS "./14_lcd_i2c")
 
+# 15 Lectura de Joystick HW-504
+idf_component_register( SRCS "./15_joystick/main.c"
+                        INCLUDE_DIRS "./15_joystick")
 
 
 
