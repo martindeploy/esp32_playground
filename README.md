@@ -1,18 +1,22 @@
 ## ESP 32 playground
 
-- 01_blink_blocking.c: Ejemplo blink con delay bloqueantes y log.
-- 02_blink_timers.c: Ejemplo blink con timer, posibilidad de enceder y apagar 2 LEDS con distinto tiempo.
-- 03_spi_matrix.c: Prueba de matriz LED 8x8 con MAX7219. Ver datasheets en docs. [Ver video](https://www.youtube.com/watch?v=OiKF7yPsxXM&t=11s)
-- 04_interrupts.c: Interrupciones por hardware utilizando un push button, resistencia pull up y capacitor de 33pF.
-- 05_ble_connect.c: Servidor Gatt por BLE. [Ver video](https://www.youtube.com/watch?v=EIo5aZ3c89Q)
-- 06_lcd_gpio.c: Conexión de pantalla LCD 4 líneas con ST7920 por GPIO (sin config SPI)
-- 07_matrix_keyboard_gpio.c: Lectura de teclado matricial 4x4 tradicional utilizando GPIO, sin bibliotecas.
-- 08_matrix_keyboard_library.c: Lectura de teclado matricial 4x4 ejemplo ESP-IDF solo válido para ESP32-S3.
-- 09_matrix_keyboard_debounce.c: Lectura de teclado matricial 4x4 con debouncing.
-- 10_ble_beacon.c:
-- 11_ble_beacon.c:
-- 12_ble_beacon.c:
-- 14_lcd_i2c: Control de LCD 16x2 en modo texto, ejemplo inicial de (https://controllerstech.com/i2c-in-esp32-esp-idf-lcd-1602) utilizando SPI con ESP32C3 super mini.
+- **01_blink_blocking**: Blink básico con `vTaskDelay` bloqueante y logging por UART.
+- **02_blink_timers**: Blink con ESP Timer (no bloqueante), manejo de 2 LEDs con frecuencias independientes.
+- **03_spi_matrix**: Control de matriz LED 8x8 con MAX7219 via SPI. [Ver video](https://www.youtube.com/watch?v=OiKF7yPsxXM&t=11s)
+- **04_interrupts**: Lectura de pulsador con interrupción por flanco, pull-up externo y capacitor anti-rebote.
+- **05_ble_innovate_yourself**: Servidor GATT BLE básico. [Ver video](https://www.youtube.com/watch?v=EIo5aZ3c89Q)
+- **06_lcd_gpio**: Control de pantalla LCD 128x64 con ST7920 via GPIO (sin driver SPI).
+- **07_matrix_keyboard_gpio**: Lectura de teclado matricial 4x4 con GPIO puro, sin bibliotecas externas.
+- **08_matrix_keyboard_idf_sample**: Lectura de teclado matricial usando la biblioteca `matrix_keyboard` de ESP-IDF. Solo compatible con ESP32-S3 (requiere `dedic_gpio`).
+- **09_matrix_keyboard_debounce**: Lectura de teclado matricial 4x4 con debouncing por software.
+- **10_ble_beacon**: Advertising BLE sin posibilidad de conexión (beacon). Emite paquetes GAP periódicamente.
+- **11_ble_connection**: BLE connectable con GAP. Permite establecer conexión desde un cliente y controla un LED onboard.
+- **12_ble_gatt_server**: Servidor GATT BLE con characteristics de lectura/escritura y notify para frecuencia cardíaca (heart rate). Basado en ejemplo ESP-IDF.
+- **13_ble_hid**: Dispositivo HID BLE. Soporta mouse, teclado y gamepad según configuración.
+- **14_lcd_i2c**: Control de LCD 16x2 en modo texto via I2C con ESP32-C3.
+- **15_joystick**: Lectura analógica de joystick HW-504 (ejes X/Y) con ADC oneshot y botón por GPIO.
+- **16_buzzer**: Control de buzzer pasivo HW-508 con PWM via LEDC, generación de tonos por frecuencia.
+- **17_tiny_rtc**: Lectura y escritura de fecha/hora con módulo Tiny RTC (DS1307) via I2C usando la biblioteca `esp-idf-lib`.
 
 
 
