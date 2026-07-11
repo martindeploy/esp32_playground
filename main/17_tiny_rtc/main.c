@@ -39,6 +39,8 @@ void ds1307_test(void *pvParameters)
     memset(&dev, 0, sizeof(i2c_dev_t));
 
     ESP_ERROR_CHECK(ds1307_init_desc(&dev, I2C_MASTER_NUM, I2C_MASTER_SDA_IO, I2C_MASTER_SCL_IO));
+    
+    // En la biblioteca tiene 400kHz
     dev.cfg.master.clk_speed = 100000; // DS1307 soporta maximo 100kHz (standard mode)
 
     // setup datetime: 2026-07-10 00:52:10
@@ -52,6 +54,7 @@ void ds1307_test(void *pvParameters)
         .tm_min  = 9,
         .tm_sec  = 0
     };
+    // Descomentar esta linea para escribir la hora en el modulo
     // ESP_ERROR_CHECK(ds1307_set_time(&dev, &time));
 
     while (1)
