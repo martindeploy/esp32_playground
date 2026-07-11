@@ -85,8 +85,13 @@
 #                         INCLUDE_DIRS "./15_joystick")
 
 # 16 Control de buzzer pasivo HW-508
-idf_component_register( SRCS "./16_buzzer/main.c"
-                        INCLUDE_DIRS "./16_buzzer")
+# idf_component_register( SRCS "./16_buzzer/main.c"
+                        # INCLUDE_DIRS "./16_buzzer")
+
+# 17 fecha y hora con Tiny RTC
+idf_component_register( SRCS            "./17_tiny_rtc/main.c"
+                        INCLUDE_DIRS    "./17_tiny_rtc"
+                    )
 
 
 
