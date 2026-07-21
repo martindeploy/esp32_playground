@@ -55,7 +55,7 @@
 # idf_component_register(SRCS "${srcs}"
 #                        PRIV_REQUIRES bt nvs_flash esp_driver_gpio
 #                        INCLUDE_DIRS "./12_ble_gatt_server/include")
-                       # CONFIG_BT_ENABLED=y
+# CONFIG_BT_ENABLED=y
 # CONFIG_BT_NIMBLE_ENABLED=y
 # CONFIG_BT_NIMBLE_50_FEATURE_SUPPORT=
 # CONFIG_BLINK_LED_GPIO=y
@@ -66,11 +66,10 @@
 # set(srcs "./13_ble_hid/esp_hid_device_main.c"
 #          "./13_ble_hid/esp_hid_gap.c")
 # set(include_dirs "./13_ble_hid")
-
 # idf_component_register(SRCS "${srcs}"
 #                        INCLUDE_DIRS "${include_dirs}"
 #                        REQUIRES esp_hid
-#                        PRIV_REQUIRES nvs_flash)#
+                    #    PRIV_REQUIRES nvs_flash)
 # CONFIG_BT_ENABLED=y
 # CONFIG_BT_NIMBLE_ENABLED=y
 # CONFIG_BT_CONTROLLER_ENABLED=y
@@ -89,10 +88,21 @@
                         # INCLUDE_DIRS "./16_buzzer")
 
 # 17 fecha y hora con Tiny RTC
-idf_component_register( SRCS            "./17_tiny_rtc/main.c"
-                        INCLUDE_DIRS    "./17_tiny_rtc"
-                    )
+# idf_component_register( SRCS            "./17_tiny_rtc/main.c"
+                        # INCLUDE_DIRS    "./17_tiny_rtc")
 
 
+# 18 Matrix LED con spi usando esp-idf-lib/max7219
+# idf_component_register( SRCS            "./18_spi_matrix_lib/main.c"
+#                         INCLUDE_DIRS    "./18_spi_matrix_lib"
+#                         )
+
+# 19 Objetc pattern
+file(GLOB_RECURSE srcs  "./19_object_pattern/main.c" 
+                        "./19_object_pattern/src/*.c"
+                        )
+idf_component_register(SRCS "${srcs}" 
+                        INCLUDE_DIRS "./19_object_pattern/include"
+                        )
 
 

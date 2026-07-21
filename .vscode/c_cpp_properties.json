@@ -5,7 +5,8 @@
       "compilerPath": "/home/martin/.espressif/tools/riscv32-esp-elf/esp-15.2.0_20251204/riscv32-esp-elf/bin/riscv32-esp-elf-gcc",
       "compileCommands": "${workspaceFolder}/build/compile_commands.json",
       "includePath": [
-        "${workspaceFolder}/**"
+        "${workspaceFolder}/**",
+        "/home/martin/.espressif/v6.0.1/esp-idf/**"
       ],
       "browse": {
         "path": [

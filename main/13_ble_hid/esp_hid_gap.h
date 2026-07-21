@@ -8,9 +8,9 @@
 #define _ESP_HID_GAP_H_
 
 #define HIDD_IDLE_MODE 0x00
-#define HIDD_BLE_MODE 0x01
-#define HIDD_BT_MODE 0x02
-#define HIDD_BTDM_MODE 0x03
+#define HIDD_BLE_MODE 0x01    // Media
+#define HIDD_BT_MODE 0x02     // Teclado
+#define HIDD_BTDM_MODE 0x03   // Mouse
 
 #define HID_DEV_MODE HIDD_BLE_MODE
 

@@ -146,11 +146,11 @@ void spiWriteMatrix(uint8_t reg, uint8_t value) {
 
 void app_main(void)
 {
-
   ESP_ERROR_CHECK(initSpi2());
   ESP_ERROR_CHECK(max7219Init());
   clearMax7219();
-
+  
+  gpio_dump_io_configuration(stdout, SOC_GPIO_VALID_GPIO_MASK);
   while (true)
   {
     spiWriteMatrix(INTENSITY_REG, 7);
