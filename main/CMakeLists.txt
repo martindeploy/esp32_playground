@@ -41,11 +41,11 @@
 # CONFIG_BT_NIMBLE_ENABLED=y
 # CONFIG_BT_NIMBLE_50_FEATURE_SUPPORT=n
 
-# 11 - BLE Beacon ejemplo. Solo advertising, sin posibilidad de conectarse
-# file(GLOB_RECURSE srcs "./11_ble_connection/main.c" "./11_ble_connection/src/*.c")
-# idf_component_register(SRCS "${srcs}"
-#                        PRIV_REQUIRES bt nvs_flash
-#                        INCLUDE_DIRS "./11_ble_connection/include")
+# 11 - BLE Beacon ejemplo.
+file(GLOB_RECURSE srcs "./11_ble_connection/main.c" "./11_ble_connection/src/*.c")
+idf_component_register(SRCS "${srcs}"
+                       PRIV_REQUIRES bt nvs_flash
+                       INCLUDE_DIRS "./11_ble_connection/include")
 # CONFIG_BT_ENABLED=y
 # CONFIG_BT_NIMBLE_ENABLED=y
 # CONFIG_BT_NIMBLE_50_FEATURE_SUPPORT=
@@ -106,6 +106,6 @@
 #                         )
 
 # 20 http server
-idf_component_register( SRCS "./20_http_server/main.c")
+# idf_component_register( SRCS "./20_http_server/main.c")
 # BT_NIMBLE_NVS_PERSIST=n
 # ESP_PHY_CALIBRATION_AND_DATA_STORAGE=n

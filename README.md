@@ -9,9 +9,9 @@
 - **07_matrix_keyboard_gpio**: Lectura de teclado matricial 4x4 con GPIO puro, sin bibliotecas externas.
 - **08_matrix_keyboard_idf_sample**: Lectura de teclado matricial usando la biblioteca `matrix_keyboard` de ESP-IDF. Solo compatible con ESP32-S3 (requiere `dedic_gpio`).
 - **09_matrix_keyboard_debounce**: Lectura de teclado matricial 4x4 con debouncing por software.
-- **10_ble_beacon**: Advertising BLE sin posibilidad de conexión (beacon). Emite paquetes GAP periódicamente.
-- **11_ble_connection**: BLE connectable con GAP. Permite establecer conexión desde un cliente y controla un LED onboard.
-- **12_ble_gatt_server**: Servidor GATT BLE con characteristics de lectura/escritura y notify para frecuencia cardíaca (heart rate). Basado en ejemplo ESP-IDF.
+- **10_ble_beacon**: Advertising BLE sin posibilidad de conexión (beacon). Emite paquetes GAP periódicamente. Basado en ejemplo ESP-IDF.
+- **11_ble_connection**: BLE connectable con GAP. Permite establecer conexión desde un cliente. Enciende el LED al conectarse y apaga al desconectarse. Basado en ejemplo ESP-IDF.
+- **12_ble_gatt_server**: Servidor GATT BLE con characteristics de lectura/escritura y notify para frecuencia cardíaca (heart rate). Controla un LED elegido. Basado en ejemplo ESP-IDF.
 - **13_ble_hid**: Dispositivo HID BLE. Soporta mouse, teclado y gamepad según configuración.
 - **14_lcd_i2c**: Control de LCD 16x2 en modo texto via I2C con ESP32-C3.
 - **15_joystick**: Lectura analógica de joystick HW-504 (ejes X/Y) con ADC oneshot y botón por GPIO.

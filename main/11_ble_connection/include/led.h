@@ -9,11 +9,12 @@
 /* Includes */
 /* ESP APIs */
 #include "driver/gpio.h"
-#include "led_strip.h"
-#include "sdkconfig.h"
 
 /* Defines */
-#define BLINK_GPIO CONFIG_BLINK_GPIO
+
+// #define BLINK_GPIO GPIO_NUM_2 // ESP32
+#define BLINK_GPIO GPIO_NUM_8 // ESP32C3 -> logica inversa off=disconnected on= connected
+
 
 /* Public function declarations */
 uint8_t get_led_state(void);
