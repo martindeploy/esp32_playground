@@ -17,6 +17,9 @@
 - **15_joystick**: Lectura analógica de joystick HW-504 (ejes X/Y) con ADC oneshot y botón por GPIO.
 - **16_buzzer**: Control de buzzer pasivo HW-508 con PWM via LEDC, generación de tonos por frecuencia.
 - **17_tiny_rtc**: Lectura y escritura de fecha/hora con módulo Tiny RTC (DS1307) via I2C usando la biblioteca `esp-idf-lib`.
+- **18_spi_matrix_lib**: Control de matriz LED 8x8 con MAX7219 via SPI usando la biblioteca `esp-idf-lib` (max7219), con símbolos, dígitos y animaciones de scroll.
+- **19_object_pattern**: Patrón orientado a objetos en C con struct `led_controller` que encapsula estado, inicialización, control de encendido/apagado y blink no bloqueante por GPIO.
+- **20_http_server**: Servidor HTTP embebido en ESP32 funcionando como Access Point. [Workshop Espressif](https://developer.espressif.com/workshops/esp-idf-basic/assignment-2-1/)
 
 
 

@@ -98,11 +98,14 @@
 #                         )
 
 # 19 Objetc pattern
-file(GLOB_RECURSE srcs  "./19_object_pattern/main.c" 
-                        "./19_object_pattern/src/*.c"
-                        )
-idf_component_register(SRCS "${srcs}" 
-                        INCLUDE_DIRS "./19_object_pattern/include"
-                        )
+# file(GLOB_RECURSE srcs  "./19_object_pattern/main.c" 
+#                         "./19_object_pattern/src/*.c"
+#                         )
+# idf_component_register(SRCS "${srcs}" 
+#                         INCLUDE_DIRS "./19_object_pattern/include"
+#                         )
 
-
+# 20 http server
+idf_component_register( SRCS "./20_http_server/main.c")
+# BT_NIMBLE_NVS_PERSIST=n
+# ESP_PHY_CALIBRATION_AND_DATA_STORAGE=n
