@@ -16,3 +16,4 @@ dependencies:
   #   public: true
   esp-idf-lib/ds1307: '*'
   esp-idf-lib/max7219: '*'
+  espressif/led_strip: ^3.0.3

@@ -20,6 +20,8 @@
 - **18_spi_matrix_lib**: Control de matriz LED 8x8 con MAX7219 via SPI usando la biblioteca `esp-idf-lib` (max7219), con símbolos, dígitos y animaciones de scroll.
 - **19_object_pattern**: Patrón orientado a objetos en C con struct `led_controller` que encapsula estado, inicialización, control de encendido/apagado y blink no bloqueante por GPIO.
 - **20_http_server**: Servidor HTTP embebido en ESP32 funcionando como Access Point. [Workshop Espressif](https://developer.espressif.com/workshops/esp-idf-basic/assignment-2-1/)
+- **21_led_rgb_neopixel**: Control de LED RGB direccionable (WS2812) integrado en la placa via periférico RMT, usando la biblioteca `led_strip`. Ciclo de colores (rojo, verde, azul, rosa, blanco). Ejemplo ESP-IDF
+- **22_uart_test**: Comunicación UART asíncrona con tareas separadas de TX y RX sobre `UART_NUM_1`.
 
 
 

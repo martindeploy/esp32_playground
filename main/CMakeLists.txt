@@ -42,10 +42,10 @@
 # CONFIG_BT_NIMBLE_50_FEATURE_SUPPORT=n
 
 # 11 - BLE Beacon ejemplo.
-file(GLOB_RECURSE srcs "./11_ble_connection/main.c" "./11_ble_connection/src/*.c")
-idf_component_register(SRCS "${srcs}"
-                       PRIV_REQUIRES bt nvs_flash
-                       INCLUDE_DIRS "./11_ble_connection/include")
+# file(GLOB_RECURSE srcs "./11_ble_connection/main.c" "./11_ble_connection/src/*.c")
+# idf_component_register(SRCS "${srcs}"
+#                        PRIV_REQUIRES bt nvs_flash
+#                        INCLUDE_DIRS "./11_ble_connection/include")
 # CONFIG_BT_ENABLED=y
 # CONFIG_BT_NIMBLE_ENABLED=y
 # CONFIG_BT_NIMBLE_50_FEATURE_SUPPORT=
@@ -109,3 +109,9 @@ idf_component_register(SRCS "${srcs}"
 # idf_component_register( SRCS "./20_http_server/main.c")
 # BT_NIMBLE_NVS_PERSIST=n
 # ESP_PHY_CALIBRATION_AND_DATA_STORAGE=n
+
+# 20 LED RBG Neopixel (Probado en ESP-32S3)
+# idf_component_register(SRCS "./21_led_rgb_neopixel/main.c" INCLUDE_DIRS "./21_led_rgb_neopixel")
+
+# 21 UART test
+idf_component_register(SRCS "./22_uart_test/main.c" INCLUDE_DIRS "./22_uart_test")
