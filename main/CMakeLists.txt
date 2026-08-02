@@ -1,5 +1,5 @@
 # Delays bloqueantes similar Arduino
-# idf_component_register(SRCS "./01_blink_blocking/main.c" INCLUDE_DIRS "./01_blink_blocking")
+idf_component_register(SRCS "./01_blink_blocking/main.c" INCLUDE_DIRS "./01_blink_blocking")
 
 # Delays con timer
 # idf_component_register(SRCS "./02_blink_timers/main.c" INCLUDE_DIRS "./02_blink_timers")
@@ -114,4 +114,4 @@
 # idf_component_register(SRCS "./21_led_rgb_neopixel/main.c" INCLUDE_DIRS "./21_led_rgb_neopixel")
 
 # 21 UART test
-idf_component_register(SRCS "./22_uart_test/main.c" INCLUDE_DIRS "./22_uart_test")
+# idf_component_register(SRCS "./22_uart_test/main.c" INCLUDE_DIRS "./22_uart_test")
