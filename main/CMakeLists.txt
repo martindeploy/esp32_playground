@@ -1,5 +1,5 @@
 # Delays bloqueantes similar Arduino
-idf_component_register(SRCS "./01_blink_blocking/main.c" INCLUDE_DIRS "./01_blink_blocking")
+# idf_component_register(SRCS "./01_blink_blocking/main.c" INCLUDE_DIRS "./01_blink_blocking")
 
 # Delays con timer
 # idf_component_register(SRCS "./02_blink_timers/main.c" INCLUDE_DIRS "./02_blink_timers")
@@ -89,7 +89,7 @@ idf_component_register(SRCS "./01_blink_blocking/main.c" INCLUDE_DIRS "./01_blin
 
 # 17 fecha y hora con Tiny RTC
 # idf_component_register( SRCS            "./17_tiny_rtc/main.c"
-                        # INCLUDE_DIRS    "./17_tiny_rtc")
+#                         INCLUDE_DIRS    "./17_tiny_rtc")
 
 
 # 18 Matrix LED con spi usando esp-idf-lib/max7219
@@ -113,5 +113,10 @@ idf_component_register(SRCS "./01_blink_blocking/main.c" INCLUDE_DIRS "./01_blin
 # 20 LED RBG Neopixel (Probado en ESP-32S3)
 # idf_component_register(SRCS "./21_led_rgb_neopixel/main.c" INCLUDE_DIRS "./21_led_rgb_neopixel")
 
-# 21 UART test
+# 22 UART test
 # idf_component_register(SRCS "./22_uart_test/main.c" INCLUDE_DIRS "./22_uart_test")
+
+
+# 23 Button
+idf_component_register(SRCS "./23_gpio_button/main.c" INCLUDE_DIRS "./23_gpio_button")
+

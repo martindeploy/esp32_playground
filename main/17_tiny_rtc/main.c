@@ -48,10 +48,10 @@ void ds1307_test(void *pvParameters)
     struct tm time =
     {
         .tm_year = 2026 - 1900,  // = 126
-        .tm_mon  = 6,  // 0-based (julio = 6)
-        .tm_mday = 10,
-        .tm_hour = 23,
-        .tm_min  = 9,
+        .tm_mon  = 7,  // 0-based (julio = 6)
+        .tm_mday = 27,
+        .tm_hour = 15,
+        .tm_min  = 42,
         .tm_sec  = 0
     };
     // Descomentar esta linea para escribir la hora en el modulo
