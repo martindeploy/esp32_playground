@@ -22,6 +22,7 @@
 - **20_http_server**: Servidor HTTP embebido en ESP32 funcionando como Access Point. [Workshop Espressif](https://developer.espressif.com/workshops/esp-idf-basic/assignment-2-1/)
 - **21_led_rgb_neopixel**: Control de LED RGB direccionable (WS2812) integrado en la placa via periférico RMT, usando la biblioteca `led_strip`. Ciclo de colores (rojo, verde, azul, rosa, blanco). Ejemplo ESP-IDF
 - **22_uart_test**: Comunicación UART asíncrona con tareas separadas de TX y RX sobre `UART_NUM_1`.
+- **23_gpio_button**: Prueba del componentente [espressif/button](https://github.com/espressif/esp-iot-solution/tree/master/components/button).
 
 
 
