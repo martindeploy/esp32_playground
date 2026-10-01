@@ -87,7 +87,7 @@
 # idf_component_register( SRCS "./16_buzzer/main.c"
                         # INCLUDE_DIRS "./16_buzzer")
 
-# 17 fecha y hora con Tiny RTC
+# 17 fecha y hora con Tiny RTC ds1307 componenten esp-idf-lib/ds1307
 # idf_component_register( SRCS            "./17_tiny_rtc/main.c"
 #                         INCLUDE_DIRS    "./17_tiny_rtc")
 
@@ -118,5 +118,9 @@
 
 
 # 23 Button
-idf_component_register(SRCS "./23_gpio_button/main.c" INCLUDE_DIRS "./23_gpio_button")
+# idf_component_register(SRCS "./23_gpio_button/main.c" INCLUDE_DIRS "./23_gpio_button")
+
+# 24
+idf_component_register( SRCS            "./24_led_rgb_classic/main.c"
+                        INCLUDE_DIRS    "./24_led_rgb_classic")
 
